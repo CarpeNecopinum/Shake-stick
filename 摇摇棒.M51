@@ -1,0 +1,240 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/20/2017  17:00:56  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+F:\工具软件\KEIL\C51\BIN\BL51.EXE main.obj TO 摇摇棒
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  F:\工具软件\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  F:\工具软件\KEIL\C51\LIB\C51S.LIB (?C?OFFXADD)
+  F:\工具软件\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  摇摇棒 (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            REG     0008H     0008H     ABSOLUTE     "REG BANK 1"
+            DATA    0010H     0004H     UNIT         ?DT?MAIN
+            IDATA   0014H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     0360H     UNIT         ?CO?MAIN
+            CODE    0366H     008CH     UNIT         ?C_C51STARTUP
+            CODE    03F2H     0071H     UNIT         ?PR?DISPLAY1?MAIN
+            CODE    0463H     0042H     UNIT         ?PR?INTERSVR0?MAIN
+            CODE    04A5H     002CH     UNIT         ?PR?DISPLAY2?MAIN
+            CODE    04D1H     002CH     UNIT         ?PR?DISPLAY3?MAIN
+            CODE    04FDH     002CH     UNIT         ?PR?DISPLAY4?MAIN
+            CODE    0529H     0024H     UNIT         ?PR?MAIN?MAIN
+            CODE    054DH     001DH     UNIT         ?PR?_DELAYUS?MAIN
+            CODE    056AH     000CH     UNIT         ?C?LIB_CODE
+            CODE    0576H     0007H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   摇摇棒 (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?INTERSVR0?MAIN
+  +--> ?PR?DISPLAY2?MAIN
+  +--> ?PR?DISPLAY3?MAIN
+  +--> ?PR?DISPLAY4?MAIN
+  +--> ?PR?DISPLAY1?MAIN
+
+?PR?DISPLAY2?MAIN
+  +--> ?PR?_DELAYUS?MAIN
+  +--> ?CO?MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/20/2017  17:00:56  PAGE 2
+
+
+
+?PR?DISPLAY3?MAIN
+  +--> ?PR?_DELAYUS?MAIN
+  +--> ?CO?MAIN
+
+?PR?DISPLAY4?MAIN
+  +--> ?PR?_DELAYUS?MAIN
+  +--> ?CO?MAIN
+
+?PR?DISPLAY1?MAIN
+  +--> ?PR?_DELAYUS?MAIN
+  +--> ?CO?MAIN
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?_DELAYUS?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  摇摇棒 (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  C:0086H         PUBLIC        loveyou
+  C:0106H         PUBLIC        hehe
+  C:0186H         PUBLIC        hanzi
+  D:0010H         PUBLIC        KY
+  C:0529H         PUBLIC        main
+  C:03F2H         PUBLIC        display1
+  C:04A5H         PUBLIC        display2
+  C:04D1H         PUBLIC        display3
+  C:04FDH         PUBLIC        display4
+  D:0011H         PUBLIC        disp
+  C:0463H         PUBLIC        intersvr0
+  C:0006H         PUBLIC        love
+  C:0558H         PUBLIC        _DelayUs
+  D:0012H         PUBLIC        pic
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  D:0013H         PUBLIC        num
+  C:054DH         SYMBOL        L?0040
+  -------         PROC          L?0039
+  -------         ENDPROC       L?0039
+  C:054DH         SYMBOL        L?0040
+  -------         PROC          _DELAYUS
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/20/2017  17:00:56  PAGE 3
+
+
+  D:0006H         SYMBOL        N
+  -------         DO            
+  D:0004H         SYMBOL        x
+  -------         ENDDO         
+  C:0558H         LINE#         149
+  C:0558H         LINE#         150
+  C:0558H         LINE#         152
+  C:0569H         LINE#         153
+  -------         ENDPROC       _DELAYUS
+  -------         PROC          INTERSVR0
+  C:0463H         LINE#         156
+  C:0470H         LINE#         158
+  C:0473H         LINE#         159
+  C:0477H         LINE#         160
+  C:0477H         LINE#         161
+  C:0479H         LINE#         162
+  C:0486H         LINE#         163
+  C:0486H         LINE#         164
+  C:0488H         LINE#         165
+  C:048DH         LINE#         166
+  C:0492H         LINE#         167
+  C:0497H         LINE#         168
+  C:049AH         LINE#         169
+  C:049AH         LINE#         170
+  C:049AH         LINE#         171
+  -------         ENDPROC       INTERSVR0
+  -------         PROC          DISPLAY1
+  -------         DO            
+  D:0003H         SYMBOL        i
+  -------         ENDDO         
+  C:03F2H         LINE#         174
+  C:03F2H         LINE#         175
+  C:03F2H         LINE#         177
+  C:03FEH         LINE#         178
+  C:0408H         LINE#         179
+  C:040FH         LINE#         180
+  C:0411H         LINE#         181
+  C:0411H         LINE#         182
+  C:0434H         LINE#         183
+  C:0457H         LINE#         184
+  C:045EH         LINE#         185
+  C:0462H         LINE#         186
+  -------         ENDPROC       DISPLAY1
+  -------         PROC          DISPLAY2
+  -------         DO            
+  D:0003H         SYMBOL        i
+  -------         ENDDO         
+  C:04A5H         LINE#         189
+  C:04A5H         LINE#         190
+  C:04A5H         LINE#         192
+  C:04ACH         LINE#         193
+  C:04AEH         LINE#         194
+  C:04AEH         LINE#         195
+  C:04BFH         LINE#         196
+  C:04C9H         LINE#         197
+  C:04CCH         LINE#         198
+  C:04D0H         LINE#         199
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/20/2017  17:00:56  PAGE 4
+
+
+  -------         ENDPROC       DISPLAY2
+  -------         PROC          DISPLAY3
+  -------         DO            
+  D:0003H         SYMBOL        i
+  -------         ENDDO         
+  C:04D1H         LINE#         202
+  C:04D1H         LINE#         203
+  C:04D1H         LINE#         205
+  C:04D8H         LINE#         206
+  C:04DAH         LINE#         207
+  C:04DAH         LINE#         208
+  C:04EBH         LINE#         209
+  C:04F5H         LINE#         210
+  C:04F8H         LINE#         211
+  C:04FCH         LINE#         212
+  -------         ENDPROC       DISPLAY3
+  -------         PROC          DISPLAY4
+  -------         DO            
+  D:0003H         SYMBOL        i
+  -------         ENDDO         
+  C:04FDH         LINE#         215
+  C:04FDH         LINE#         216
+  C:04FDH         LINE#         218
+  C:0504H         LINE#         219
+  C:0506H         LINE#         220
+  C:0506H         LINE#         221
+  C:0517H         LINE#         222
+  C:0521H         LINE#         223
+  C:0524H         LINE#         224
+  C:0528H         LINE#         225
+  -------         ENDPROC       DISPLAY4
+  -------         PROC          MAIN
+  C:0529H         LINE#         228
+  C:0529H         LINE#         229
+  C:0529H         LINE#         230
+  C:052BH         LINE#         231
+  C:052DH         LINE#         232
+  C:052FH         LINE#         233
+  C:0532H         LINE#         234
+  C:0532H         LINE#         235
+  C:0532H         LINE#         236
+  C:0538H         LINE#         237
+  C:0538H         LINE#         238
+  C:053FH         LINE#         239
+  C:053FH         LINE#         240
+  C:0541H         LINE#         241
+  C:054BH         LINE#         242
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?OFFXADD
+  C:056AH         PUBLIC        ?C?OFFXADD
+  -------         ENDMOD        ?C?OFFXADD
+
+Program Size: data=21.0 xdata=0 code=1405
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
